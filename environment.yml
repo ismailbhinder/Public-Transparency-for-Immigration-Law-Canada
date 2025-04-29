@@ -1,0 +1,9 @@
+name: heron_law
+channels:
+  - conda-forge
+dependencies:
+  - conda-lock
+  - ipykernel
+  - jupyterlab
+  - pandas
+
