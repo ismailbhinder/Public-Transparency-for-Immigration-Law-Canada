@@ -13,10 +13,10 @@
 version: 1
 metadata:
   content_hash:
-    linux-64: 69588b51d0fa3f5aa853f86924f2b0ecaedbfe6215df9fa454a0c6231f2f2370
-    osx-arm64: 681412406e407c27fa1f2c6f79a3daa29461e4f6a8524f28b6f86427ac1f52cc
-    osx-64: 68090e5c6863488f38978c5648660def9cedaa581962cbbe0a5450a910eece8a
-    win-64: 4a0217bd5fb0a37a35d9bfd1e96121bd4424c890fc6ee9c6033100f37adbe246
+    linux-64: ddce968377d7abc64f822b5e7bcda064d0921b0cad4f522691eeaa9dd6f7af2f
+    osx-arm64: 9ac6cd295c23d6320a93cd0156d3d55969c423d02025a0e1239770b316de4510
+    osx-64: 3120820deb8d9d61014fcdeb20c233aa94321325137fdb5c63fe7908624d9ee5
+    win-64: 6c1ac6bc573c1a4821b9b91d53d1415ef89c19189f3f5aeee2a3c5a484c403a9
   channels:
   - url: conda-forge
     used_env_vars: []
@@ -9302,6 +9302,58 @@ package:
     sha256: 17131120c10401a99205fc6fe436e7903c0fa092f1b3e80452927ab377239bcc
   category: main
   optional: false
+- name: patsy
+  version: 1.0.1
+  manager: conda
+  platform: linux-64
+  dependencies:
+    numpy: '>=1.4.0'
+    python: '>=3.9'
+  url: https://conda.anaconda.org/conda-forge/noarch/patsy-1.0.1-pyhd8ed1ab_1.conda
+  hash:
+    md5: ee23fabfd0a8c6b8d6f3729b47b2859d
+    sha256: ab52916f056b435757d46d4ce0a93fd73af47df9c11fd72b74cc4b7e1caca563
+  category: main
+  optional: false
+- name: patsy
+  version: 1.0.1
+  manager: conda
+  platform: osx-64
+  dependencies:
+    numpy: '>=1.4.0'
+    python: '>=3.9'
+  url: https://conda.anaconda.org/conda-forge/noarch/patsy-1.0.1-pyhd8ed1ab_1.conda
+  hash:
+    md5: ee23fabfd0a8c6b8d6f3729b47b2859d
+    sha256: ab52916f056b435757d46d4ce0a93fd73af47df9c11fd72b74cc4b7e1caca563
+  category: main
+  optional: false
+- name: patsy
+  version: 1.0.1
+  manager: conda
+  platform: osx-arm64
+  dependencies:
+    numpy: '>=1.4.0'
+    python: '>=3.9'
+  url: https://conda.anaconda.org/conda-forge/noarch/patsy-1.0.1-pyhd8ed1ab_1.conda
+  hash:
+    md5: ee23fabfd0a8c6b8d6f3729b47b2859d
+    sha256: ab52916f056b435757d46d4ce0a93fd73af47df9c11fd72b74cc4b7e1caca563
+  category: main
+  optional: false
+- name: patsy
+  version: 1.0.1
+  manager: conda
+  platform: win-64
+  dependencies:
+    numpy: '>=1.4.0'
+    python: '>=3.9'
+  url: https://conda.anaconda.org/conda-forge/noarch/patsy-1.0.1-pyhd8ed1ab_1.conda
+  hash:
+    md5: ee23fabfd0a8c6b8d6f3729b47b2859d
+    sha256: ab52916f056b435757d46d4ce0a93fd73af47df9c11fd72b74cc4b7e1caca563
+  category: main
+  optional: false
 - name: pcre2
   version: '10.44'
   manager: conda
@@ -11861,6 +11913,206 @@ package:
     sha256: d462f89d59f73686f324b603cc6fed4db49f7337143ad4447ac9b6fd68610e67
   category: main
   optional: false
+- name: scipy
+  version: 1.15.2
+  manager: conda
+  platform: linux-64
+  dependencies:
+    __glibc: '>=2.17,<3.0.a0'
+    libblas: '>=3.9.0,<4.0a0'
+    libcblas: '>=3.9.0,<4.0a0'
+    libgcc: '>=13'
+    libgfortran: ''
+    libgfortran5: '>=13.3.0'
+    liblapack: '>=3.9.0,<4.0a0'
+    libstdcxx: '>=13'
+    numpy: '>=1.23.5'
+    python: '>=3.13,<3.14.0a0'
+    python_abi: 3.13.*
+  url: https://conda.anaconda.org/conda-forge/linux-64/scipy-1.15.2-py313h86fcf2b_0.conda
+  hash:
+    md5: ca68acd9febc86448eeed68d0c6c8643
+    sha256: c3052b04397f76188611c8d853ac749986874d6a5869292b92ebae7ce093c798
+  category: main
+  optional: false
+- name: scipy
+  version: 1.15.2
+  manager: conda
+  platform: osx-64
+  dependencies:
+    __osx: '>=10.13'
+    libblas: '>=3.9.0,<4.0a0'
+    libcblas: '>=3.9.0,<4.0a0'
+    libcxx: '>=18'
+    libgfortran: '>=5'
+    libgfortran5: '>=13.2.0'
+    liblapack: '>=3.9.0,<4.0a0'
+    numpy: '>=1.23.5'
+    python: '>=3.13,<3.14.0a0'
+    python_abi: 3.13.*
+  url: https://conda.anaconda.org/conda-forge/osx-64/scipy-1.15.2-py313h7e69c36_0.conda
+  hash:
+    md5: 53c23f87aedf2d139d54c88894c8a07f
+    sha256: 17f8a4eab61085516db8ae7ff202a82d017443fd284e099a503c3e13e4bee38b
+  category: main
+  optional: false
+- name: scipy
+  version: 1.15.2
+  manager: conda
+  platform: osx-arm64
+  dependencies:
+    __osx: '>=11.0'
+    libblas: '>=3.9.0,<4.0a0'
+    libcblas: '>=3.9.0,<4.0a0'
+    libcxx: '>=18'
+    libgfortran: '>=5'
+    libgfortran5: '>=13.2.0'
+    liblapack: '>=3.9.0,<4.0a0'
+    numpy: '>=1.23.5'
+    python: '>=3.13,<3.14.0a0'
+    python_abi: 3.13.*
+  url: https://conda.anaconda.org/conda-forge/osx-arm64/scipy-1.15.2-py313h9a24e0a_0.conda
+  hash:
+    md5: 45e6244d4265a576a299c0a1d8b09ad9
+    sha256: 2cce94fba335df6ea1c7ce5554ba8f0ef8ec0cf1a7e6918bfc2d8b2abf880794
+  category: main
+  optional: false
+- name: scipy
+  version: 1.15.2
+  manager: conda
+  platform: win-64
+  dependencies:
+    libblas: '>=3.9.0,<4.0a0'
+    libcblas: '>=3.9.0,<4.0a0'
+    liblapack: '>=3.9.0,<4.0a0'
+    numpy: '>=1.23.5'
+    python: '>=3.13,<3.14.0a0'
+    python_abi: 3.13.*
+    ucrt: '>=10.0.20348.0'
+    vc: '>=14.2,<15'
+    vc14_runtime: '>=14.29.30139'
+  url: https://conda.anaconda.org/conda-forge/win-64/scipy-1.15.2-py313h2eca4b9_0.conda
+  hash:
+    md5: 9ee392518b0a688b996dec39ced39e35
+    sha256: 64ab269e333ab957c61053745cb967bfbe216f191a594107adcb69aca16b6294
+  category: main
+  optional: false
+- name: seaborn
+  version: 0.13.2
+  manager: conda
+  platform: linux-64
+  dependencies:
+    seaborn-base: 0.13.2
+    statsmodels: '>=0.12'
+  url: https://conda.anaconda.org/conda-forge/noarch/seaborn-0.13.2-hd8ed1ab_3.conda
+  hash:
+    md5: 62afb877ca2c2b4b6f9ecb37320085b6
+    sha256: ea29a69b14dd6be5cdeeaa551bf50d78cafeaf0351e271e358f9b820fcab4cb0
+  category: main
+  optional: false
+- name: seaborn
+  version: 0.13.2
+  manager: conda
+  platform: osx-64
+  dependencies:
+    seaborn-base: 0.13.2
+    statsmodels: '>=0.12'
+  url: https://conda.anaconda.org/conda-forge/noarch/seaborn-0.13.2-hd8ed1ab_3.conda
+  hash:
+    md5: 62afb877ca2c2b4b6f9ecb37320085b6
+    sha256: ea29a69b14dd6be5cdeeaa551bf50d78cafeaf0351e271e358f9b820fcab4cb0
+  category: main
+  optional: false
+- name: seaborn
+  version: 0.13.2
+  manager: conda
+  platform: osx-arm64
+  dependencies:
+    seaborn-base: 0.13.2
+    statsmodels: '>=0.12'
+  url: https://conda.anaconda.org/conda-forge/noarch/seaborn-0.13.2-hd8ed1ab_3.conda
+  hash:
+    md5: 62afb877ca2c2b4b6f9ecb37320085b6
+    sha256: ea29a69b14dd6be5cdeeaa551bf50d78cafeaf0351e271e358f9b820fcab4cb0
+  category: main
+  optional: false
+- name: seaborn
+  version: 0.13.2
+  manager: conda
+  platform: win-64
+  dependencies:
+    seaborn-base: 0.13.2
+    statsmodels: '>=0.12'
+  url: https://conda.anaconda.org/conda-forge/noarch/seaborn-0.13.2-hd8ed1ab_3.conda
+  hash:
+    md5: 62afb877ca2c2b4b6f9ecb37320085b6
+    sha256: ea29a69b14dd6be5cdeeaa551bf50d78cafeaf0351e271e358f9b820fcab4cb0
+  category: main
+  optional: false
+- name: seaborn-base
+  version: 0.13.2
+  manager: conda
+  platform: linux-64
+  dependencies:
+    matplotlib-base: '>=3.4,!=3.6.1'
+    numpy: '>=1.20,!=1.24.0'
+    pandas: '>=1.2'
+    python: '>=3.9'
+    scipy: '>=1.7'
+  url: https://conda.anaconda.org/conda-forge/noarch/seaborn-base-0.13.2-pyhd8ed1ab_3.conda
+  hash:
+    md5: fd96da444e81f9e6fcaac38590f3dd42
+    sha256: f209c9c18187570b85ec06283c72d64b8738f825b1b82178f194f4866877f8aa
+  category: main
+  optional: false
+- name: seaborn-base
+  version: 0.13.2
+  manager: conda
+  platform: osx-64
+  dependencies:
+    matplotlib-base: '>=3.4,!=3.6.1'
+    numpy: '>=1.20,!=1.24.0'
+    pandas: '>=1.2'
+    python: '>=3.9'
+    scipy: '>=1.7'
+  url: https://conda.anaconda.org/conda-forge/noarch/seaborn-base-0.13.2-pyhd8ed1ab_3.conda
+  hash:
+    md5: fd96da444e81f9e6fcaac38590f3dd42
+    sha256: f209c9c18187570b85ec06283c72d64b8738f825b1b82178f194f4866877f8aa
+  category: main
+  optional: false
+- name: seaborn-base
+  version: 0.13.2
+  manager: conda
+  platform: osx-arm64
+  dependencies:
+    matplotlib-base: '>=3.4,!=3.6.1'
+    numpy: '>=1.20,!=1.24.0'
+    pandas: '>=1.2'
+    python: '>=3.9'
+    scipy: '>=1.7'
+  url: https://conda.anaconda.org/conda-forge/noarch/seaborn-base-0.13.2-pyhd8ed1ab_3.conda
+  hash:
+    md5: fd96da444e81f9e6fcaac38590f3dd42
+    sha256: f209c9c18187570b85ec06283c72d64b8738f825b1b82178f194f4866877f8aa
+  category: main
+  optional: false
+- name: seaborn-base
+  version: 0.13.2
+  manager: conda
+  platform: win-64
+  dependencies:
+    matplotlib-base: '>=3.4,!=3.6.1'
+    numpy: '>=1.20,!=1.24.0'
+    pandas: '>=1.2'
+    python: '>=3.9'
+    scipy: '>=1.7'
+  url: https://conda.anaconda.org/conda-forge/noarch/seaborn-base-0.13.2-pyhd8ed1ab_3.conda
+  hash:
+    md5: fd96da444e81f9e6fcaac38590f3dd42
+    sha256: f209c9c18187570b85ec06283c72d64b8738f825b1b82178f194f4866877f8aa
+  category: main
+  optional: false
 - name: secretstorage
   version: 3.3.3
   manager: conda
@@ -12326,6 +12578,85 @@ package:
   hash:
     md5: b1b505328da7a6b246787df4b5a49fbc
     sha256: 570da295d421661af487f1595045760526964f41471021056e993e73089e9c41
+  category: main
+  optional: false
+- name: statsmodels
+  version: 0.14.4
+  manager: conda
+  platform: linux-64
+  dependencies:
+    __glibc: '>=2.17,<3.0.a0'
+    libgcc: '>=13'
+    numpy: '>=1.21,<3'
+    packaging: '>=21.3'
+    pandas: '!=2.1.0,>=1.4'
+    patsy: '>=0.5.6'
+    python: '>=3.13.0rc2,<3.14.0a0'
+    python_abi: 3.13.*
+    scipy: '!=1.9.2,>=1.8'
+  url: https://conda.anaconda.org/conda-forge/linux-64/statsmodels-0.14.4-py313ha014f3b_0.conda
+  hash:
+    md5: f87777ccb3f1ec3bf1abfd0ada600779
+    sha256: 3d9815c49e209c29968265deb97cc9ab499b23216e1483d5e29051933130ed5a
+  category: main
+  optional: false
+- name: statsmodels
+  version: 0.14.4
+  manager: conda
+  platform: osx-64
+  dependencies:
+    __osx: '>=10.13'
+    numpy: '>=1.21,<3'
+    packaging: '>=21.3'
+    pandas: '!=2.1.0,>=1.4'
+    patsy: '>=0.5.6'
+    python: '>=3.13.0rc2,<3.14.0a0'
+    python_abi: 3.13.*
+    scipy: '!=1.9.2,>=1.8'
+  url: https://conda.anaconda.org/conda-forge/osx-64/statsmodels-0.14.4-py313h8f4588c_0.conda
+  hash:
+    md5: b15e3b550604a7e0026369395fecaabb
+    sha256: 0f541f6bb7039bffee42041575c0e5dfea4aa50a60380b596874f090f0826cb2
+  category: main
+  optional: false
+- name: statsmodels
+  version: 0.14.4
+  manager: conda
+  platform: osx-arm64
+  dependencies:
+    __osx: '>=11.0'
+    numpy: '>=1.21,<3'
+    packaging: '>=21.3'
+    pandas: '!=2.1.0,>=1.4'
+    patsy: '>=0.5.6'
+    python: '>=3.13.0rc2,<3.14.0a0'
+    python_abi: 3.13.*
+    scipy: '!=1.9.2,>=1.8'
+  url: https://conda.anaconda.org/conda-forge/osx-arm64/statsmodels-0.14.4-py313h93df234_0.conda
+  hash:
+    md5: 5cfb535304bfc73990e5d50184b63f0a
+    sha256: bd04f71d376946f21729e5b920c5722138cb12e01098ce8a3ff67e6c7bdb880c
+  category: main
+  optional: false
+- name: statsmodels
+  version: 0.14.4
+  manager: conda
+  platform: win-64
+  dependencies:
+    numpy: '>=1.21,<3'
+    packaging: '>=21.3'
+    pandas: '!=2.1.0,>=1.4'
+    patsy: '>=0.5.6'
+    python: '>=3.13.0rc2,<3.14.0a0'
+    python_abi: 3.13.*
+    scipy: '!=1.9.2,>=1.8'
+    ucrt: '>=10.0.20348.0'
+    vc: '>=14.2,<15'
+    vc14_runtime: '>=14.29.30139'
+  url: https://conda.anaconda.org/conda-forge/win-64/statsmodels-0.14.4-py313h8e081ca_0.conda
+  hash:
+    md5: 8ab38d75ca4ad6855d029da04bffd5cb
+    sha256: 30c5731c81f8de663bf42e4ffc3b9508eabeceefaec17a997057e21c15327ec6
   category: main
   optional: false
 - name: tbb
