@@ -26,7 +26,7 @@ format-links: false
 
 This project aims to improve transparency in Canada’s immigration law by analyzing publicly available data on inadmissibility decisions and legal outcomes. Using datasets from Immigration, Refugees and Citizenship Canada (IRCC) and federal court decisions curated by the Refugee Law Lab, we will investigate how individuals are found inadmissible to Canada and how such decisions are reviewed in court. 
 
-Our team will use data science methods, including exploratory data analysis and basic natural language processing, to uncover patterns and potential biases in decision-making. The final product will be a public-facing dashboard built in Python using Dash, designed to present insights in a clear and interactive way for legal professionals, policymakers, researchers, and the general public. This initiative supports the broader goal of increasing accountability in immigration governance by making complex data more accessible and interpretable.
+Our team will use data science methods, including exploratory data analysis, statistical inference and natural language processing, to uncover patterns and potential biases in decision-making. The final product will be a public-facing dashboard built in Python using Dash, designed to present insights in a clear and interactive way for legal professionals, policymakers, researchers, and the general public. This initiative supports the broader goal of increasing accountability in immigration governance by making complex data more accessible and interpretable.
 
 ## Introduction
 
@@ -61,15 +61,28 @@ This product aims to serve multiple audiences, lawyers seeking trends in legal d
 
 ## Data Science Techniques
 
+This section outlines the datasets, analytical methods, and evaluation criteria used in the project. By integrating structured administrative records with unstructured legal texts, we aim to uncover patterns in Canadian inadmissibility decisions.
+
 ### Data Sources
 
 The project will draw on three key datasets:
 
 1. **IRCC A34(1) Refusals (2019–2024):**  
-   Structured data that records how often applicants are refused entry under section A34(1) of IRPA. Information includes country of citizenship, year, and residency status (temporary/permanent).  
+   An excel file, containing records of number of applicants which are refused entry under section A34(1) of IRPA. Information includes country of citizenship, year, and residency status (temporary/permanent), country of residence and refusal count.
+
+![A snippet of IRCC A34 (1) Refusal Dataset ](../img/a_34_sample.png){#a_34_sample width=100%}
 
 2. **IRCC Litigation Applications (2018–2023):**  
-   A dataset summarizing legal challenges to immigration decisions. It records case types, outcomes,applicant's nationality, litigation counts,etc.
+   This structured dataset captures federal court applications challenging immigration decisions. Each row represents an aggregate litigation record based on unique combinations of decision year, country, and decision type. Key variables include:
+
+   - `LIT Leave Decision Date - Year`: Year when leave decision was rendered.
+   - `Country of Citizenship`: Applicant’s country.
+   - `LIT Leave Decision Desc`: Outcome of the case (e.g., "Allowed", "Dismissed at Leave").
+   - `LIT Case Type Group Desc` / `LIT Case Type Desc`: Legal basis and type of case (e.g., "Removal Order", "Mandamus").
+   - `LIT Filed By Desc`: Who filed the case (typically "Person Concerned").
+   - `LIT Tribunal Type Desc`: Tribunal that handled the case (almost always "Federal Court").
+   - `LIT Primary Office Regional Group Desc`: Geographic office associated with the application.
+   - `LIT Litigation Count`: Number of litigation instances under that combination of fields.
 
 3. **Canadian Legal Decisions (2001–2024):**  
    An unstructured dataset of legal texts from federal court and tribunal decisions related to immigration, compiled by the Refugee Law Lab. Our analysis will filter this data to focus specifically on inadmissibility cases, excluding refugee claims.
@@ -94,10 +107,12 @@ For the two IRCC datasets, we will:
 
 - **Restructure the data** into a consistent format (also known as “tidy” data).
 - **Use visual tools** (bar charts, heatmaps, and trend lines) to explore:
-  - Year-by-year changes in refusal rates.
-  - Differences in outcomes by country or region.
-  - Disparities between temporary vs. permanent applicants.
+  - Differences in litigation counts by country or region.
+  - Disparities between temporary vs. permanent applicants 
+  - And so on.
 - **Form hypotheses** about whether certain groups are more likely to be found inadmissible.
+
+![Differences in litigation counts by country before, during and after Covid-19](../img/litigation_count_country.png){#litigation_count_country width=100%}
 
 While this analysis cannot establish causality, it can highlight patterns warranting further legal or policy investigation.
 
@@ -132,15 +147,19 @@ We will also gather feedback from mentors and the capstone partner to ensure tha
 
 ## Timeline
 
-| Week       | Task Description                                                                 |
-|------------|----------------------------------------------------------------------------------|
-| **Week 1** | Set up environment and version control (Dash, Quarto, GitHub); review datasets   |
-| **Week 2** | Exploratory analysis on IRCC datasets; clean and filter legal text dataset       |
-| **Week 3** | Extract metadata from legal decisions; continue EDA on litigation data           |
-| **Week 4** | Integrate court data with dashboard; finalize IRCC analysis                      |
-| **Week 5** | Finalize dashboard layout; populate visuals and filters                          |
-| **Week 6** | Finalize documentation; incorporate feedback; prepare final submission           |
+The project runs from **April 28 to June 25**, spanning 8 weeks. A runnable version of the data product (interactive dashboard) will be ready by **June 9**, followed by a refinement phase leading to final submission.
 
-*Parallel Tasks*: Legal and IRCC datasets will be analyzed concurrently by different team members to ensure timely delivery.
+| **Week**   | **Dates**          | **Task Description**                                                             |
+|------------|--------------------|----------------------------------------------------------------------------------|
+| **Week 1** | Apr 28 – May 4     | Set up environment and version control (Dash, Quarto, GitHub); review datasets   |
+| **Week 2** | May 5 – May 11     | Perform EDA on IRCC datasets; clean and filter legal text dataset                |
+| **Week 3** | May 12 – May 18    | Extract metadata from legal decisions; continue EDA on litigation data           |
+| **Week 4** | May 19 – May 25    | Integrate court data with dashboard; finalize IRCC analysis                      |
+| **Week 5** | May 26 – June 1    | Finalize dashboard layout; implement initial visuals and filters                 |
+| **Week 6** | June 2 – June 8    | Complete runnable dashboard draft and review internally      |
+| **Week 7** | June 9 – June 15   | Incorporate mentor/partner feedback; refine dashboard and visualizations         |
+| **Week 8** | June 16 – June 25  | Final documentation, QA, polish, and formal submission                           |
+
+**Parallel Work**: IRCC and legal datasets will be analyzed concurrently to ensure timely delivery.
 
 ## References
