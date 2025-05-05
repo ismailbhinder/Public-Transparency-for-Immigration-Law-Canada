@@ -13,10 +13,10 @@
 version: 1
 metadata:
   content_hash:
-    linux-64: 1fc6d0eba4739a59ad14b36b71a4feab19f9d044dd8915252e4c58c4b0e8d1ab
-    osx-arm64: b83b1ce3314be22bf77d18f13c50168375788f648e0bbe40b69a7ffd039dc2a3
-    osx-64: 39e040445b6688cf45a4f6c755d5fe127ffb5c9979a28c20af212949092dd116
-    win-64: eb1176d91083b933dc284b84168d9cdb2ef26d3443a7a094d95a6e2dc10d3aae
+    linux-64: 69588b51d0fa3f5aa853f86924f2b0ecaedbfe6215df9fa454a0c6231f2f2370
+    osx-arm64: 681412406e407c27fa1f2c6f79a3daa29461e4f6a8524f28b6f86427ac1f52cc
+    osx-64: 68090e5c6863488f38978c5648660def9cedaa581962cbbe0a5450a910eece8a
+    win-64: 4a0217bd5fb0a37a35d9bfd1e96121bd4424c890fc6ee9c6033100f37adbe246
   channels:
   - url: conda-forge
     used_env_vars: []
@@ -2261,6 +2261,50 @@ package:
     sha256: d2ea5e52da745c4249e1a818095a28f9c57bd4df22cbfc645352defa468e86c2
   category: main
   optional: false
+- name: dart-sass
+  version: 1.58.3
+  manager: conda
+  platform: linux-64
+  dependencies: {}
+  url: https://conda.anaconda.org/conda-forge/linux-64/dart-sass-1.58.3-ha770c72_1.conda
+  hash:
+    md5: d54982a58cd9be3d00a7efe76ba6f60c
+    sha256: a94f8024ac8a09cbf265c62d2bd57e709802868ef656c6cafe5864ed20bf94af
+  category: main
+  optional: false
+- name: dart-sass
+  version: 1.58.3
+  manager: conda
+  platform: osx-64
+  dependencies: {}
+  url: https://conda.anaconda.org/conda-forge/osx-64/dart-sass-1.58.3-h694c41f_1.conda
+  hash:
+    md5: 5151299fff69a62e792c79d1b726a470
+    sha256: d6bd5e712d55ef3e2b222fcb98eb20ab8e72042594e38369c28b8fb75ce7a1f8
+  category: main
+  optional: false
+- name: dart-sass
+  version: 1.58.3
+  manager: conda
+  platform: osx-arm64
+  dependencies: {}
+  url: https://conda.anaconda.org/conda-forge/osx-arm64/dart-sass-1.58.3-hce30654_1.conda
+  hash:
+    md5: 7282e188f57f69f03378f149fcb8acf8
+    sha256: fcaf0653d18ccbc83845ddc41277bcf8394609bdaf3ccbafb48dcd4092a70c0d
+  category: main
+  optional: false
+- name: dart-sass
+  version: 1.58.3
+  manager: conda
+  platform: win-64
+  dependencies: {}
+  url: https://conda.anaconda.org/conda-forge/win-64/dart-sass-1.58.3-h57928b3_1.conda
+  hash:
+    md5: 717501926d44c46117979fc54892c560
+    sha256: b974772f376bea3afc8ecacf916fce3170b02604310c4a1d25fc39f1c44bd532
+  category: main
+  optional: false
 - name: dbus
   version: 1.13.6
   manager: conda
@@ -2431,6 +2475,110 @@ package:
   hash:
     md5: 961b3a227b437d82ad7054484cfa71b2
     sha256: 9717a059677553562a8f38ff07f3b9f61727bd614f505658b0a5ecbcf8df89be
+  category: main
+  optional: false
+- name: deno
+  version: 1.46.3
+  manager: conda
+  platform: linux-64
+  dependencies:
+    __glibc: '>=2.17,<3.0.a0'
+    libgcc: '>=13'
+  url: https://conda.anaconda.org/conda-forge/linux-64/deno-1.46.3-hcab8b69_0.conda
+  hash:
+    md5: f8410ffda105ab8d380990bbdf9f266f
+    sha256: 704bb88a744aacab35c159929d6aee8216e7731e920f7d28254a721059dde4b1
+  category: main
+  optional: false
+- name: deno
+  version: 1.46.3
+  manager: conda
+  platform: osx-64
+  dependencies:
+    __osx: '>=11.0'
+  url: https://conda.anaconda.org/conda-forge/osx-64/deno-1.46.3-hc9750cb_0.conda
+  hash:
+    md5: 2e18c5dc223fbdcef7ef6d4daf02a3a8
+    sha256: a5be23ba5096bbbca1cb0cea2dcb781cb9cd561cd6c7494362d879be3e78dde4
+  category: main
+  optional: false
+- name: deno
+  version: 1.46.3
+  manager: conda
+  platform: osx-arm64
+  dependencies: {}
+  url: https://conda.anaconda.org/conda-forge/osx-arm64/deno-1.46.3-hce30654_0.conda
+  hash:
+    md5: d6f7f532d1897c514586996b0bcbcf91
+    sha256: 6e6e06a5dbde738df5e1335cd71e1fd74c7539a7e4cb7b0571d6fd14811e00fe
+  category: main
+  optional: false
+- name: deno
+  version: 1.46.3
+  manager: conda
+  platform: win-64
+  dependencies:
+    ucrt: '>=10.0.20348.0'
+    vc: '>=14.2,<15'
+    vc14_runtime: '>=14.29.30139'
+  url: https://conda.anaconda.org/conda-forge/win-64/deno-1.46.3-h8d7d278_0.conda
+  hash:
+    md5: b8a93975407a73d2735d4a715497e76a
+    sha256: a87dd9d3a143ca6566279643520b91f1b381369484558b575f26b3c5cdef491d
+  category: main
+  optional: false
+- name: deno-dom
+  version: 0.1.41
+  manager: conda
+  platform: linux-64
+  dependencies:
+    __glibc: '>=2.17,<3.0.a0'
+    deno: '>=1.24.2'
+  url: https://conda.anaconda.org/conda-forge/linux-64/deno-dom-0.1.41-h4768de7_0.conda
+  hash:
+    md5: 89e80615c6b1b1ae4f5267bfc5fc7f66
+    sha256: 2726829e1a6117dc9555a2088a4ebaa05035218b8791106f036ba73f15b1b13e
+  category: main
+  optional: false
+- name: deno-dom
+  version: 0.1.41
+  manager: conda
+  platform: osx-64
+  dependencies:
+    __osx: '>=10.13'
+    deno: '>=1.24.2'
+  url: https://conda.anaconda.org/conda-forge/osx-64/deno-dom-0.1.41-h51332c3_0.conda
+  hash:
+    md5: 6f8f4a8487f87f13e0c43b15ee9b1541
+    sha256: b7d8621033ac310f40e083ee1157db9aaa178b7355dbd74be54ca1f0f4b517ce
+  category: main
+  optional: false
+- name: deno-dom
+  version: 0.1.41
+  manager: conda
+  platform: osx-arm64
+  dependencies:
+    __osx: '>=11.0'
+    deno: '>=1.24.2'
+  url: https://conda.anaconda.org/conda-forge/osx-arm64/deno-dom-0.1.41-hde76f7a_0.conda
+  hash:
+    md5: 02bff7fa3d076f6351ef027cd682c6e4
+    sha256: 4a92d9c785bccae80961875900eb7b86149737b7a219e66b27dfcbfff4a1798b
+  category: main
+  optional: false
+- name: deno-dom
+  version: 0.1.41
+  manager: conda
+  platform: win-64
+  dependencies:
+    deno: '>=1.24.2'
+    ucrt: '>=10.0.20348.0'
+    vc: '>=14.3,<15'
+    vc14_runtime: '>=14.42.34433'
+  url: https://conda.anaconda.org/conda-forge/win-64/deno-dom-0.1.41-h1a6af48_0.conda
+  hash:
+    md5: 84bc9003c48bf69d4663b00f692404cb
+    sha256: 199ed9fea4d58cea10572cc5a7fb3ad0fbefd189cb785667639dbfc4210ed2ab
   category: main
   optional: false
 - name: distlib
@@ -2642,6 +2790,50 @@ package:
   hash:
     md5: 349b1d4311d7344bff92ad890fdbe6aa
     sha256: a54317217ac986038b01c254a9f06b59f4401587f936ba2089e5fc025c7fc698
+  category: main
+  optional: false
+- name: esbuild
+  version: 0.25.3
+  manager: conda
+  platform: linux-64
+  dependencies: {}
+  url: https://conda.anaconda.org/conda-forge/linux-64/esbuild-0.25.3-ha770c72_0.conda
+  hash:
+    md5: 15dc43b7354533617d63c21213f8a92d
+    sha256: cde42f8083a1c2cefb5e2363c901fda69879b03ed1cb00bd2fcf84959cba3414
+  category: main
+  optional: false
+- name: esbuild
+  version: 0.25.3
+  manager: conda
+  platform: osx-64
+  dependencies: {}
+  url: https://conda.anaconda.org/conda-forge/osx-64/esbuild-0.25.3-h694c41f_0.conda
+  hash:
+    md5: 3038d68bcfedbff7b3bc82397c0defb5
+    sha256: 9e70eb5b22ad6a17dd80e3f9ca2dd6efe92be4daae0f535469bf510b5598b368
+  category: main
+  optional: false
+- name: esbuild
+  version: 0.25.3
+  manager: conda
+  platform: osx-arm64
+  dependencies: {}
+  url: https://conda.anaconda.org/conda-forge/osx-arm64/esbuild-0.25.3-hce30654_0.conda
+  hash:
+    md5: 6d2952acb197a2fe539c0a6887da4172
+    sha256: 51cb8dca92ef8fdea9b5806537f1b2e95fc29b7ffcda1265b327aee14de03fed
+  category: main
+  optional: false
+- name: esbuild
+  version: 0.25.3
+  manager: conda
+  platform: win-64
+  dependencies: {}
+  url: https://conda.anaconda.org/conda-forge/win-64/esbuild-0.25.3-h57928b3_0.conda
+  hash:
+    md5: fb4d310930092f5aff8c858ec687be73
+    sha256: 0fd2ed3d37ff6adf6be06f6581d6c9b13e76d9e3d6994f2b91fdfda1e7001eb0
   category: main
   optional: false
 - name: et_xmlfile
@@ -8970,6 +9162,50 @@ package:
     sha256: 557e7661c4112e6f999ec38de55165d520bff4b0ac8b1c7ad8233904a58e5694
   category: main
   optional: false
+- name: pandoc
+  version: '3.4'
+  manager: conda
+  platform: linux-64
+  dependencies: {}
+  url: https://conda.anaconda.org/conda-forge/linux-64/pandoc-3.4-ha770c72_0.conda
+  hash:
+    md5: 61c94057aaa5ae6145137ce1fddb2c04
+    sha256: 8b6c7ddd9422cc6b7ddc10aa8d184f07c1534429e106c441f679f21e95db31c8
+  category: main
+  optional: false
+- name: pandoc
+  version: '3.4'
+  manager: conda
+  platform: osx-64
+  dependencies: {}
+  url: https://conda.anaconda.org/conda-forge/osx-64/pandoc-3.4-h694c41f_0.conda
+  hash:
+    md5: 63ec245f3d3169cbef0bc2d492d33dde
+    sha256: 825d5a97b98cde1bf4c771bd06ebc742fdb97e1a2c7a37735e9bce828aee2b76
+  category: main
+  optional: false
+- name: pandoc
+  version: '3.4'
+  manager: conda
+  platform: osx-arm64
+  dependencies: {}
+  url: https://conda.anaconda.org/conda-forge/osx-arm64/pandoc-3.4-hce30654_0.conda
+  hash:
+    md5: 01d8cd88a2b489220b58627a525c878b
+    sha256: 5339fcdd5d0cd6d7335eb4a119b4ca704212b724d5d07c8e9454fad6d74d22a3
+  category: main
+  optional: false
+- name: pandoc
+  version: '3.4'
+  manager: conda
+  platform: win-64
+  dependencies: {}
+  url: https://conda.anaconda.org/conda-forge/win-64/pandoc-3.4-h57928b3_0.conda
+  hash:
+    md5: 88cac28228b54ef26acff986d800f1a5
+    sha256: 0560bd53c051dbf02eccde12a3f6ddefb83bc6fc625b3e559838189ec5ae3052
+  category: main
+  optional: false
 - name: pandocfilters
   version: 1.5.0
   manager: conda
@@ -11063,6 +11299,74 @@ package:
     sha256: 40bb84f5898e60dd7ee27a504c0403ea5dae514ce0638b763bb00ff4d73ab611
   category: main
   optional: false
+- name: quarto
+  version: 1.6.43
+  manager: conda
+  platform: linux-64
+  dependencies:
+    dart-sass: ''
+    deno: '>=1.46.3,<1.46.4.0a0'
+    deno-dom: '>=0.1.41,<0.1.42.0a0'
+    esbuild: ''
+    pandoc: '3.4'
+    typst: 0.11.0
+  url: https://conda.anaconda.org/conda-forge/linux-64/quarto-1.6.43-ha770c72_0.conda
+  hash:
+    md5: ee632f4913ea933f914fe38d674037c8
+    sha256: 925656f8a14dfbf52023d9edb0d1c4166f85cab7d59de575a918e39073244d99
+  category: main
+  optional: false
+- name: quarto
+  version: 1.6.43
+  manager: conda
+  platform: osx-64
+  dependencies:
+    dart-sass: ''
+    deno: '>=1.46.3,<1.46.4.0a0'
+    deno-dom: '>=0.1.41,<0.1.42.0a0'
+    esbuild: ''
+    pandoc: '3.4'
+    typst: 0.11.0
+  url: https://conda.anaconda.org/conda-forge/osx-64/quarto-1.6.43-h694c41f_0.conda
+  hash:
+    md5: b52d6404d32b6e0260c026fbd7e777a7
+    sha256: fdae4217ed60594bb80573604332d718c7110ab49ef9f98c19d58ce5e748fa93
+  category: main
+  optional: false
+- name: quarto
+  version: 1.6.43
+  manager: conda
+  platform: osx-arm64
+  dependencies:
+    dart-sass: ''
+    deno: '>=1.46.3,<1.46.4.0a0'
+    deno-dom: '>=0.1.41,<0.1.42.0a0'
+    esbuild: ''
+    pandoc: '3.4'
+    typst: 0.11.0
+  url: https://conda.anaconda.org/conda-forge/osx-arm64/quarto-1.6.43-hce30654_0.conda
+  hash:
+    md5: 6b3b5aa66157dcd79775313304d36daa
+    sha256: cffc18323f23d149ad85c8301b36e757b16c7c97428db5b45ebca1b8488ae523
+  category: main
+  optional: false
+- name: quarto
+  version: 1.6.43
+  manager: conda
+  platform: win-64
+  dependencies:
+    dart-sass: ''
+    deno: '>=1.46.3,<1.46.4.0a0'
+    deno-dom: '>=0.1.41,<0.1.42.0a0'
+    esbuild: ''
+    pandoc: '3.4'
+    typst: 0.11.0
+  url: https://conda.anaconda.org/conda-forge/win-64/quarto-1.6.43-h57928b3_0.conda
+  hash:
+    md5: 569667709f02431129cbb02abbde93ff
+    sha256: 2caea5b7263590012e4de96e5722b5a2a03add90dd6fc767bc556dff941d0eb8
+  category: main
+  optional: false
 - name: readline
   version: '8.2'
   manager: conda
@@ -12695,6 +12999,55 @@ package:
   hash:
     md5: f6d7aa696c67756a650e91e15e88223c
     sha256: 3088d5d873411a56bf988eee774559335749aed6f6c28e07bf933256afb9eb6c
+  category: main
+  optional: false
+- name: typst
+  version: 0.11.0
+  manager: conda
+  platform: linux-64
+  dependencies:
+    libgcc-ng: '>=12'
+    openssl: '>=3.2.1,<4.0a0'
+  url: https://conda.anaconda.org/conda-forge/linux-64/typst-0.11.0-he8a937b_0.conda
+  hash:
+    md5: f6ac8c8ab4a4c9ed0ec710e3f5fa3954
+    sha256: e0be4b66c486a15341d7309744ca94c51dbf0c3914c05cbf2bd796aac0c510c5
+  category: main
+  optional: false
+- name: typst
+  version: 0.11.0
+  manager: conda
+  platform: osx-64
+  dependencies: {}
+  url: https://conda.anaconda.org/conda-forge/osx-64/typst-0.11.0-h11a7dfb_0.conda
+  hash:
+    md5: ec223d03456b9eedef3b2ee5af215904
+    sha256: 0f9f2272c73eb299ed6032b409e95846091af7b7335077562addd1562b63362a
+  category: main
+  optional: false
+- name: typst
+  version: 0.11.0
+  manager: conda
+  platform: osx-arm64
+  dependencies: {}
+  url: https://conda.anaconda.org/conda-forge/osx-arm64/typst-0.11.0-ha5936a3_0.conda
+  hash:
+    md5: 955b5a7e393fc686b1d96db926955f34
+    sha256: c092295b591e681de6da2b90ca74a1452f8ea25b5825eaabccab3ac4d698ebed
+  category: main
+  optional: false
+- name: typst
+  version: 0.11.0
+  manager: conda
+  platform: win-64
+  dependencies:
+    ucrt: '>=10.0.20348.0'
+    vc: '>=14.2,<15'
+    vc14_runtime: '>=14.29.30139'
+  url: https://conda.anaconda.org/conda-forge/win-64/typst-0.11.0-h975169c_0.conda
+  hash:
+    md5: 0b3c49a8651b4036179ca4088b84d1ea
+    sha256: 5407408f416421ff1e503a0ddb9e6a1fac76a2a580f2f21113a6c3bdbaa8ebc6
   category: main
   optional: false
 - name: tzdata
