@@ -6,4 +6,5 @@ dependencies:
   - ipykernel
   - jupyterlab
   - pandas
-
+  - openpyxl
+  - matplotlib
