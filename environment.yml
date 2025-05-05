@@ -6,4 +6,7 @@ dependencies:
   - ipykernel
   - jupyterlab
   - pandas
-
+  - openpyxl
+  - matplotlib
+  - quarto
+  - seaborn
