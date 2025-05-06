@@ -5,9 +5,12 @@ dependencies:
   - conda-lock
   - ipykernel
   - jupyterlab
-  - pandas
-  - openpyxl
   - matplotlib
+  - openpyxl
+  - pandas
+  - pip
+  - plotly
+  - pyarrow
   - quarto
   - seaborn
-  - plotly
+  - git-lfs
