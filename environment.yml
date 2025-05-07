@@ -14,5 +14,4 @@ dependencies:
   - quarto
   - seaborn
   - git-lfs
-  - openai
-prefix: /Users/husain/miniforge3/envs/heron_law
+  - datasets
