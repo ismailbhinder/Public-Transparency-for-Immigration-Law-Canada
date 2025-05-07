@@ -5,5 +5,13 @@ dependencies:
   - conda-lock
   - ipykernel
   - jupyterlab
+  - matplotlib
+  - openpyxl
   - pandas
-
+  - pip
+  - plotly
+  - pyarrow
+  - quarto
+  - seaborn
+  - git-lfs
+  - datasets
