@@ -13,7 +13,6 @@ This project investigates patterns in immigration inadmissibility decisions in C
 The project leverages exploratory data analysis, statistical inference and natural language processing. The final product will be a **public-facing interactive dashboard** built using **Python and Dash**, designed to make these datasets interpretable for legal professionals, policymakers, and the public.
 
 ---
-
 ## Dependencies
 
 - [Conda](https://anaconda.org/anaconda/conda)
@@ -22,11 +21,49 @@ The project leverages exploratory data analysis, statistical inference and natur
 
 ---
 
-### Developer dependencies
+##  Getting Started
+
+###  Clone the Repository
+
+```bash
+git clone https://github.com/ismailbhinder/Public-Transparency-for-Immigration-Law-Canada.git
+```
+
+### Setting the environment:
+From the **project root directory**, run the following commands:
+```bash
+conda-lock install --name heron_law conda-lock.yml
+```
+
+---
+
+## Rendering the Report
+
+From the **project root directory**, run the following commands:
+
+###  Preview the report in a browser:
+```bash
+quarto preview report/proposal_report.qmd
+
+To generate final HTML output:
+
+```bash
+quarto render report/proposal_report.qmd --to html
+```
+
+To generate final PDF output:
+
+```bash
+quarto render report/proposal_report.qmd --to pdf
+```
+
+---
+
+## Developer dependencies
 - `conda` (version 23.9.0 or higher)
 - `conda-lock` (version 2.5.7 or higher)
 
-### Adding a new dependency
+## Adding a new dependency
 
 1. Add the dependency to the `environment.yml` file on a new branch.
 
