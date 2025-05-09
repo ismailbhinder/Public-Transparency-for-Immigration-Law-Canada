@@ -24,9 +24,9 @@ format-links: false
 
 ## Executive Summary
 
-This project aims to improve transparency in Canada’s immigration law by analyzing publicly available data on inadmissibility decisions and legal outcomes. Using datasets from Immigration, Refugees and Citizenship Canada (IRCC) and federal court decisions curated by the Refugee Law Lab, we will investigate how individuals are found inadmissible to Canada and how such decisions are reviewed in court.
+This project addresses the lack of transparency and accessibility in Canadian immigration inadmissibility decisions, particularly under section A34(1) of the Immigration and Refugee Protection Act (IRPA). The data provided by IRCC is poorly structured and lacks documentation, while court decisions are primarily textual and difficult for legal professionals to analyze efficiently.
 
-To uncover patterns and potential biases, which are a key goal of this project, we will explore textual data on court decisions and statistical data on inadmissibility trends using data science methods, including exploratory data analysis, statistical inference, and natural language processing.The final product will be a public-facing dashboard built in Python using Dash, designed to present insights in a clear and interactive way for legal professionals, policymakers, researchers, and the general public. This initiative supports the broader goal of increasing accountability in immigration governance by making complex data more accessible and interpretable.
+To tackle these issues, we apply data science methods, including data cleaning, exploratory analysis, statistical inference, and natural language processing, to extract and structure key information. Our goal is to uncover patterns and potential biases in decision-making. The final output will be a publicly accessible, interactive dashboard built in Python using Dash, aimed at informing legal professionals, policymakers, and the public, and promoting greater accountability in immigration governance.
 
 ## Introduction
 
@@ -34,20 +34,18 @@ To uncover patterns and potential biases, which are a key goal of this project, 
 
 Inadmissibility decisions under Canadian immigration law determine who may enter or remain in Canada, based on factors like national security threats, human rights violations, criminal activity, or breaches of the *Immigration and Refugee Protection Act (IRPA)*, such as section A34(1) related to security-based inadmissibility.
 
-While decisions from federal courts are publicly available, they are presented in unstructured formats that limit systematic analysis. In contrast, the data released by IRCC is often raw, inconsistently structured, and lacking contextual detail, making it difficult to access and interpret.
+Federal court decisions, though publicly available, are presented in unstructured formats that limit systematic analysis. IRCC data, meanwhile, must be requested through a formal process with a fee and is often raw, inconsistently formatted, and lacking context. These barriers hinder legal practitioners, public interest groups, and policymakers from identifying patterns or advocating for fairer immigration processes (@shekarian).
 
-This lack of transparency hinders legal practitioners, public interest groups, and even policymakers from identifying trends, systemic issues, or inconsistencies in immigration decision-making. Without clear, interpretable data, it is difficult to advocate for fairer and more accountable processes.(@shekarian)
-
-To address these challenges, this project combines legal domain knowledge and data science methods. While the data provided by IRCC is often raw and inconsistently structured, data science techniques such as NLP and EDA can effectively uncover patterns and potential biases. Drawing inspiration from Professor Sean Rehaag’s research on judicial decisions in refugee and immigration law (@rehaag2023luck), we aim to apply similar methodologies,where useing AI to extract and categorize data from judicial decisions as well as revealing patterns and biases in the decision-making process. For this project, we will audit and analyze the data obtained from IRCC, referencing Professor Rehaag’s code, and generate structured summaries based on the grounds of inadmissibility outlined in the legal introduction. In addition, we will collaborate with Will, who is assisting in obtaining the necessary data, to apply Rehaag's techniques and further enhance transparency in Canada’s immigration process.
+To address these challenges, this project integrates legal domain expertise with data science methodologies. We will clean and assess the quality of the IRCC data to enable further analysis and to provide recommendations for improving data transparency and usability. For the analysis of textual court decisions, we will adapt Professor Sean Rehaag’s methodology (@rehaag2023luck), which employs regular expressions and large language models (LLMs) to categorize cases into orders, notices, and judgments, and to extract key details such as case outcomes and presiding judges. The processed data is stored in a tidy format, enabling effective exploratory data analysis and statistical inference. While Professor Rehaag focused on stay of removal cases, our analysis will center on inadmissibility decisions in the context of immigration. Additionally, we will collaborate with Will, who assisted in obtaining the necessary IRCC data, to apply and extend these techniques in support of increased transparency in Canada's immigration system.
 
 ### Tangible Objectives
 
 This project has four concrete goals:
 
-1.  **Analyze IRCC inadmissibility and litigation datasets** to identify trends based on time, country of citizenship, type of decision, and applicant status (temporary or permanent).
+1.  **Analyze IRCC inadmissibility and litigation datasets** to identify trends based on  country of citizenship, type of decision, and applicant status (temporary or permanent).
 2.  **Apply legal analytics** which combines legal knowledge with data science techniques,to federal court decisions involving inadmissibility.We will use modern NLP methods to extract meaningful case-level information such as outcomes, judges, and legal reasoning from unstructured court decision texts. This helps us uncover trends, biases, and data gaps that affect the fairness of decision-making.
 3.  **Develop a public-facing dashboard** using Dash (a Python framework) to allow users, legal professionals, policymakers, and others, to explore key trends and findings interactively.This dashboard helps uncover patterns and insights related to inadmissibility decisions, ultimately supporting fairer and more informed decision-making in immigration cases.
-4.  **Promote open and interpretable data use** by transforming difficult-to-access raw data into structured, contextualized insights.
+4.  **Promote open and interpretable data use** by transforming raw, difficult-to-access data into structured and contextualized insights, ensuring greater transparency. Additionally, we will assess and report on the quality of IRCC data, identifying areas for improvement and consistency.
 
 ### Final Data Product
 
@@ -59,7 +57,7 @@ The final deliverable will include:
 
 ## Data Science Techniques
 
-This section outlines the datasets, analytical methods, and evaluation criteria used in the project. By combining structured administrative records with unstructured legal texts, we aim to systematically analyze patterns in Canadian inadmissibility decisions.
+This section outlines the datasets, analytical methods, and evaluation criteria that will guide the project. By providing tools to systematically analyze both structured administrative records and unstructured legal texts, we aim to uncover patterns in Canadian inadmissibility decisions.
 
 ### Data Sources
 
@@ -68,13 +66,16 @@ The project will draw on three key datasets:
 1.  **IRCC A34(1) Refusals (2019–2024):**\
     An excel file, containing records of applicants who are refused entry under section A34(1) of the **Immigration and Refugee Protection Act (IRPA)**, which relates specifically to security-based inadmissibility. As shown in **Figure 1**, the dataset includes the number of applicants refused entry under section A34(1) of IRPA by country of citizenship and residency status. The full dataset spans from 2019 to 2024.
 
-![](../img/a_34_sample.png){#a_34_sample} ***Figure 1***: Distribution of Applicants Refused Under Section A34(1) of IRPA (2019–2024)
+::: {.text-center}
+  ![](../img/a_34_sample.png){#a_34_sample}  
+  ***Figure 1***: Distribution of Applicants Refused Under Section A34(1) of IRPA (2019–2024)
+:::
 
 2.  **IRCC Litigation Applications (2018–2023):**\
     This structured dataset, provided in Excel,captures federal court applications challenging immigration decisions. Each row represents an aggregate litigation record based on unique combinations of decision year, country, and decision type. The dataset includes key variables such as the year of the leave decision, country of citizenship, case outcome (e.g., "Allowed", "Dismissed at Leave"), case type (e.g., "Removal Order", "Mandamus"), who filed the case ("Person Concerned"), tribunal type (usually "Federal Court"), geographic office, and the number of litigation instances for each combination of fields.
 
 3.  **Canadian Legal Decisions (2001–2024):**\
-    An unstructured dataset of legal texts from federal court and tribunal decisions related to immigration, compiled by the Refugee Law Lab(@refugeelawlab).Our analysis will filter this dataset to specifically examine inadmissibility cases, focusing on the grounds for inadmissibility under the Immigration and Refugee Protection Act (IRPA) and excluding refugee claims. This will allow us to concentrate on cases related to national security, criminality, and other security-based inadmissibility grounds.
+    An unstructured dataset of legal texts from federal court and tribunal decisions related to immigration, compiled by the Refugee Law (@refugeelawlab). Our analysis will filter this dataset to specifically examine inadmissibility cases, focusing on the grounds for inadmissibility under the Immigration and Refugee Protection Act (IRPA) and excluding refugee claims. This will allow us to concentrate on cases related to national security, criminality, human rights and other inadmissibility grounds.
 
 Each dataset provides a different perspective, administrative and judicial, allowing a well-rounded examination of inadmissibility in Canada.
 
@@ -94,21 +95,24 @@ This step ensures that both legal and data science conclusions are grounded in w
 
 For the two IRCC datasets, we will:
 
--   **Restructure the data** into a consistent format (also known as “tidy” data).(@shekarian)
--   **Use data visualization tools** (bar charts, heatmaps, and trend lines) to explore:
+-   **Restructure the data** into a consistent format (also known as “tidy” data).
+-   **Use data visualization** (bar charts, heatmaps, and trend lines) to explore:
     -   Differences in litigation counts by country or region.
     -   Disparities between temporary vs. permanent applicants
     -   Differences in decisions made by Regional office vs. Other offices
     -   Potential biases in decision outcomes based on applicant demographics or country of origin.
 -   **Form hypotheses** regarding whether certain countries or applicant groups exhibit higher rates of inadmissibility. As shown in **Figure 2**, the differences in litigation counts by country before, during, and after the COVID-19 pandemic suggest potential trends and disparities that warrant further investigation.
 
-![](../img/litigation_volume_by_country_and_period.png){#litigation_count_country} ***Figure 2***: Differences in Litigation Counts by Country Before, During, and After COVID-19
+::: {.text-center}
+![](../img/litigation_volume_by_country_and_period.png){#litigation_count_country}  
+***Figure 2***: Differences in Litigation Counts by Country Before, During, and After COVID-19  
+:::
 
 While this analysis cannot establish causality, and it remains uncertain whether statistical inference can be reliably performed, it can highlight patterns that warrant further legal or policy investigation. Acknowledging these limitations is crucial, as it reflects the need for careful interpretation and further validation in future work.
 
 #### Unstructured Legal Text Analysis
 
-For the court decision texts from @huggingface, we will:
+For the court decision texts from Refugee Law @refugeelawlab, we will:
 
 -   **Classify cases** based on the type of inadmissibility using regular expression by keyword-matching.
 -   **Extract key information** such as judge names, outcome (granted or denied), and city of filing using large language models (LLMs).
@@ -116,13 +120,6 @@ For the court decision texts from @huggingface, we will:
 
 A stretch goal includes **semantic analysis**, examining the reasoning within judgments to see how legal language evolves over time or varies by case type.
 
-#### Comparative Analysis
-
-Across all datasets, we will conduct basic time-based trend analysis to identify:
-
--   Whether inadmissibility findings have increased or decreased over time.
--   If certain court outcomes correspond with changes in policy or global events.
--   How legal decisions align (or diverge) from administrative trends.
 
 #### Evaluation Metrics and Success Criteria
 
@@ -130,9 +127,13 @@ To assess whether the project has met its goals, we will use the following crite
 
 **General Metrics:**
 
--   **Coverage Metrics**: Percentage of cases successfully categorized from legal text.
+-   **Coverage Metrics**: 
+    - Percentage of cases successfully categorized from legal text.
+    - Accuracy and precision of extracted information (e.g., judge names, outcomes) from federal court decisions.
 -   **Accessibility**: Can both legal and non-technical users interact with and understand the dashboard?
 -   **Reproducibility**: Are our data processing and analysis steps transparent and replicable
+
+We will also gather feedback from mentors and the capstone partner to ensure that the final product aligns with stakeholder expectations.
 
 **Specific Goals:**
 
@@ -142,19 +143,21 @@ We will also gather feedback from mentors and the capstone partner to ensure tha
 
 ## Timeline
 
-The project runs from **April 28 to June 25**, spanning 8 weeks. A runnable version of the data product (interactive dashboard) will be ready by **June 9**, followed by a refinement phase leading to final submission.
+The project runs from **April 28 to June 25** (8 weeks). A working version of the interactive dashboard will be available by **June 9**, followed by a refinement and documentation phase. Workstreams on IRCC administrative data and federal court decisions will proceed **in parallel**, with responsibilities distributed among team members to maximize efficiency. Feedback loops with our partner will be integrated at multiple stages to ensure relevance, usability, and accuracy.
 
-| **Week**   | **Dates**         | **Task Description**                                                           |
-|---------------|---------------|------------------------------------------|
-| **Week 1** | Apr 28 – May 4    | Set up environment and version control (Dash, Quarto, GitHub); review datasets |
-| **Week 2** | May 5 – May 11    | Perform EDA on IRCC datasets; clean and filter legal text dataset              |
-| **Week 3** | May 12 – May 18   | Extract metadata from legal decisions; continue EDA on litigation data         |
-| **Week 4** | May 19 – May 25   | Integrate court data with dashboard; finalize IRCC analysis                    |
-| **Week 5** | May 26 – June 1   | Finalize dashboard layout; implement initial visuals and filters               |
-| **Week 6** | June 2 – June 8   | Complete runnable dashboard draft and review internally                        |
-| **Week 7** | June 9 – June 15  | Incorporate mentor/partner feedback; refine dashboard and visualizations       |
-| **Week 8** | June 16 – June 25 | Final documentation, QA, polish, and formal submission                         |
+| **Week**   | **Dates**         | **Planned Activities**                                                                                                    |
+|------------|------------------|---------------------------------------------------------------------------------------------------------------------------|
+| **Week 1** | Apr 28 – May 4    | Set up development environment (Dash, Quarto); configure GitHub for version control. Review both IRCC and court datasets. Define initial schema for structured outputs. Align on scope with partner. |
+| **Week 2** | May 5 – May 11    | Begin parallel EDA: clean IRCC data (identify missing fields, inconsistencies) and pre-process court decisions (filter relevant cases). Develop evaluation framework and metadata structure. |
+| **Week 3** | May 12 – May 18   | Implement NLP pipeline to extract case-level metadata (e.g., outcome, judge) from legal texts. Continue IRCC analysis (grouping by country/status). Share preliminary findings with partner for feedback. |
+| **Week 4** | May 19 – May 25   | Build integration layer for dashboard. Merge cleaned data sources into backend structure. Validate early figures and metrics with partner. Draft summary of data quality (IRCC). |
+| **Week 5** | May 26 – June 1   | Develop dashboard interface: implement visualizations (filters by country, time, applicant type). Begin writing supporting text (methods, limitations). |
+| **Week 6** | June 2 – June 8   | Complete a **runnable dashboard prototype**. Conduct internal QA and usability check. Prepare structured summary of key insights for review. Share full preview with partner. |
+| **Week 7** | June 9 – June 15  | Incorporate mentor and partner feedback into visualizations and layout. Refine analysis outputs (especially court case categorization and trend interpretation). Improve dashboard interactivity. |
+| **Week 8** | June 16 – June 25 | Final QA, accessibility testing, documentation, and packaging for formal submission. Prepare reproducibility guide. Conduct final partner check-in. |
 
-**Parallel Work**: IRCC and legal datasets will be analyzed concurrently to ensure timely delivery.
+### Stretch Goals
+
+If time allows, we will explore grouping court decisions based on similarities in language, tone, or legal reasoning. This may involve using basic sentiment analysis or clustering techniques to identify common patterns across cases. The goal is to better understand variations in how inadmissibility decisions are written and reasoned, which could reveal useful trends or inconsistencies.
 
 ## References
