@@ -36,23 +36,23 @@ Inadmissibility decisions under Canadian immigration law determine who may enter
 
 Federal court decisions, though publicly available, are presented in unstructured formats that limit systematic analysis. IRCC data, meanwhile, must be requested through a formal process with a fee and is often raw, inconsistently formatted, and lacking context. These barriers hinder legal practitioners, public interest groups, and policymakers from identifying patterns or advocating for fairer immigration processes (@shekarian).
 
-To address these challenges, this project integrates legal domain expertise with data science methodologies. We will clean and assess the quality of the IRCC data to enable further analysis and to provide recommendations for improving data transparency and usability. For the analysis of textual court decisions, we will adapt Professor Sean Rehaag’s methodology (@rehaag2023luck), which employs regular expressions and large language models (LLMs) to categorize cases into orders, notices, and judgments, and to extract key details such as case outcomes and presiding judges. The processed data is stored in a tidy format, enabling effective exploratory data analysis and statistical inference. While Professor Rehaag focused on stay of removal cases, our analysis will center on inadmissibility decisions in the context of immigration. Additionally, we will collaborate with Will, who assisted in obtaining the necessary IRCC data, to apply and extend these techniques in support of increased transparency in Canada's immigration system.
+To address these challenges, this project integrates legal domain expertise with data science methodologies. We will clean and assess the quality of the IRCC data to enable further analysis and to provide recommendations for improving data transparency and usability. For the analysis of textual court decisions, we will adapt Professor Sean Rehaag’s methodology (@rehaag2023luck), which employs regular expressions and large language models (LLMs) to categorize cases into orders, notices, and judgments, and to extract key details such as case outcomes and presiding judges. The processed data is stored in a tidy format, enabling effective exploratory data analysis and statistical inference. While Professor Rehaag focused on stay of removal cases, our analysis will center on inadmissibility decisions in the context of immigration. Additionally, we will collaborate with Wei William (Will) Tao, who assisted in obtaining the necessary IRCC data, to apply and extend these techniques in support of increased transparency in Canada's immigration system.
 
 ### Tangible Objectives
 
 This project has four concrete goals:
 
 1.  **Analyze IRCC inadmissibility and litigation datasets** to identify trends based on  country of citizenship, type of decision, and applicant status (temporary or permanent).
-2.  **Apply legal analytics** which combines legal knowledge with data science techniques,to federal court decisions involving inadmissibility.We will use modern NLP methods to extract meaningful case-level information such as outcomes, judges, and legal reasoning from unstructured court decision texts. This helps us uncover trends, biases, and data gaps that affect the fairness of decision-making.
+2.  **Combine legal knowledge with data science techniques** and apply it on federal court decisions involving inadmissibility. We will use modern NLP methods to extract meaningful case-level information such as outcomes, judges, and legal reasoning from unstructured court decision texts. This helps us uncover trends, biases, and data gaps that affect the fairness of decision-making.
 3.  **Develop a public-facing dashboard** using Dash (a Python framework) to allow users, legal professionals, policymakers, and others, to explore key trends and findings interactively.This dashboard helps uncover patterns and insights related to inadmissibility decisions, ultimately supporting fairer and more informed decision-making in immigration cases.
-4.  **Promote open and interpretable data use** by transforming raw, difficult-to-access data into structured and contextualized insights, ensuring greater transparency. Additionally, we will assess and report on the quality of IRCC data, identifying areas for improvement and consistency.
+4.  By making the dashboard publicly accessible, it will encourage the **use of open and interpretable data** by transforming raw, complex, and difficult-to-access datasets into structured and contextualized insights. This will support greater transparency in immigration decision-making. Additionally, the project includes an evaluation of IRCC data quality, identifying inconsistencies and recommending areas for improvement.
 
 ### Final Data Product
 
 The final deliverable will include:
 
 -   A **web-based interactive dashboard**, allowing users like lawyers,policymakers, and data scientists to filter and visualize patterns in immigration inadmissibility and court decisions.
--   **Documentation** describing the data sources, analytical methods, and key limitations.
+-   A **report** documenting the data sources, analytical methods, and key limitations.
 -   **Reproducible Python scripts** for transparency and future use by researchers or advocacy groups.
 
 ## Data Science Techniques
