@@ -24,7 +24,7 @@ format-links: false
 
 ## Executive Summary
 
-This project addresses the lack of transparency and accessibility in Canadian immigration inadmissibility decisions, particularly under section A34(1) of the Immigration and Refugee Protection Act (IRPA). The data provided by IRCC is poorly structured and lacks documentation, while court decisions are primarily textual and difficult for legal professionals to analyze efficiently.
+This project aim to address the lack of transparency and accessibility in Canadian immigration inadmissibility decisions. The data provided by IRCC is poorly structured and lacks documentation, while court decisions are primarily textual and difficult for legal professionals to analyze efficiently.
 
 To tackle these issues, we apply data science methods, including data cleaning, exploratory analysis, statistical inference, and natural language processing, to extract and structure key information. Our goal is to uncover patterns and potential biases in decision-making. The final output will be a publicly accessible, interactive dashboard built in Python using Dash, aimed at informing legal professionals, policymakers, and the public, and promoting greater accountability in immigration governance.
 
