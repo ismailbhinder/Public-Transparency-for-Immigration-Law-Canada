@@ -34,7 +34,10 @@ From the **project root directory**, run the following commands:
 ```bash
 conda-lock install --name heron_law conda-lock.yml
 ```
-
+and then activate the conda environment using:
+```bash
+conda activate heron_law
+```
 ---
 
 ## Rendering the Report
