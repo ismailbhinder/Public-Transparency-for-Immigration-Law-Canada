@@ -1,0 +1,12 @@
+import streamlit as st
+
+st.set_page_config(layout="wide")
+pages = {
+    "Data": [
+        st.Page("A34_Refused_Data.py", title="A34 Refused Data"),
+        #st.Page("page2.py", title="page2"),
+    ],
+
+}
+pg = st.navigation(pages)
+pg.run()
