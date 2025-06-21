@@ -3,13 +3,16 @@ import streamlit as st
 import plotly.express as px
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
+import os
 
 # Page config
 st.set_page_config(page_title="Litigation Dashboard", layout="wide")
 
+path = os.path.join(os.path.dirname(__file__), "..", "..", "data", "raw", "litigation_cases.xlsx")
+
 # Load data
 df = pd.read_excel(
-    "../data/raw/litigation_cases.xlsx",
+    path,
     skiprows=5, skipfooter=7
 )
 
