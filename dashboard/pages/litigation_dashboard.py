@@ -36,6 +36,7 @@ st.title("Litigation Case Dashboard")
 
 # ===== Section 1 =====
 st.header("Overview of Top Countries and Litigation Trends")
+st.markdown("#### Litigation Cases Remain in High Volume Since 2021")
 
 # Litigation Top Countries
 top_lit = lit.groupby("Country of Citizenship")["LIT Litigation Count"].sum().reset_index()
@@ -79,6 +80,8 @@ st.plotly_chart(fig_trend, use_container_width=True)
 # ===== Section 2 =====
 # ===== Litigation Case Types Over Time by Country =====
 st.header("Case Type Breakdown Over Time for Top 4 Countries")
+st.markdown("#### Mandamus Surges in China, Visa Refusals Dominates Iran, RAD Peaks in Nigeria")
+
 
 countries = {
     "People's Republic of China": "China",
@@ -115,23 +118,22 @@ for col_idx, (country_key, country_name) in enumerate(countries.items(), start=1
         values="LIT Litigation Count"
     ).fillna(0).sort_index()
 
-    total_counts = pivot_df.sum()
-    total_percent = (total_counts / total_counts.sum() * 100).round(2)
-
-
     for case_type in valid_case_types:
-        fig.add_trace(
-            go.Bar(
-                x=pivot_df[case_type].astype(str),
-                y=pivot_df.index,
-                orientation="h",
-                name=case_type,
-                text=pivot_df[case_type],
-                textposition="outside",
-                marker_color=color_map[case_type],
-                showlegend=False
-            ), row=2, col=col_idx
-        )
+        if case_type in pivot_df.columns:
+            fig.add_trace(
+                go.Bar(
+                    x=pivot_df[case_type].astype(str),
+                    y=pivot_df.index,
+                    orientation="h",
+                    name=case_type,
+                    text=pivot_df[case_type],
+                    textposition="outside",
+                    marker_color=color_map[case_type],
+                    showlegend=(col_idx == 1)
+                ),
+                row=2, col=col_idx
+            )
+
 
 
 fig.update_layout(
@@ -148,6 +150,8 @@ st.plotly_chart(fig, use_container_width=True)
 
 # ===== Section 3 =====
 st.header("Decision Type by Country Dumbbell Chart")
+st.markdown("#### Case Outcomes: How Each Country’s Decision Breakdown Differs from the Overall Distribution")
+
 
 # Country-level percentages
 country_grouped = lit[lit["Country of Citizenship"].isin(top4)].groupby(
@@ -239,7 +243,8 @@ fig.update_layout(
 st.plotly_chart(fig, use_container_width=True)
 
 # ===== Section 4 =====
-st.header("Decision Group Trends")
+st.header("Dismissed & Discontinued Cases Increasing Over Years")
+st.markdown("#### India and Iran have seen the sharpest rise in these outcomes since 2021")
 
 nonk_df = lit.copy()
 df_filtered = nonk_df[
