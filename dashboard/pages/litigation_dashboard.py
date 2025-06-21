@@ -4,11 +4,13 @@ import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import seaborn as sns
-
+import os
 # Load data
+
 @st.cache_data
 def load_data():
-    lit = pd.read_excel("data/raw/litigation_cases.xlsx", sheet_name="Final", skiprows=5)
+    path = os.path.join(os.path.dirname(__file__), "..", "..", "data", "raw", "litigation_cases.xlsx")
+    lit = pd.read_excel(path, sheet_name="Final", skiprows=5)
     lit["Year"] = lit["LIT Leave Decision Date - Year"]
 
     # Standardizing Leave decision
