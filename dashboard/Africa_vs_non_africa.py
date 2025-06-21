@@ -137,9 +137,10 @@ continent_map.update(caribbean_countries)
 df['continent'] = df["Country of Citizenship"].map(continent_map)
 
 st.header("1.Total Litigation Cases vs Dismissed Rate by Continent")
-st.markdown("""
-- **Africa** is not only a major source of cases but also has one of the highest refusal rates, suggesting a structural or systemic bias rather than a random artifact of small sample sizes.  
-- Despite a moderate case volume, **Caribbean countries** exhibit the highest refusal rate, underscoring that anti-African/Black racism extends beyond the African continent into predominantly Black Caribbean jurisdictions.
+st.markdown("""  
+- Africa handles the second-highest volume (~13 400 cases) but its refusal rate (56.5 %) is well above the global average.
+- Caribbean jurisdictions, despite a moderate caseload (~2 560), see the highest refusal rate (67.7 %).
+- South America and Europe both have mid-range volumes but lower refusal rates (~47.5 – 49.9 %), highlighting that African and Caribbean cases are treated more punitively.
 """)
 total = (
     df
@@ -203,8 +204,9 @@ st.plotly_chart(fig, use_container_width=True)
 
 st.header("2. Overall Dismissed Rate Difference vs Global")
 st.markdown("""
-- Caribbean cases run about +16.3 % above the world-wide refusal rate by far the biggest positive gap.
-- North America is next at +8.6 %, then Africa at +5.1 %.
+- Caribbean refusal rates exceed the world average by +16.3 pp, the largest gap of any region.
+- North America is +8.6 pp and Africa +5.1 pp above global, confirming a systematic elevation.
+- By contrast, Asia, Europe and South America fall below global (–5.6 pp to –1.5 pp), underscoring the specific disadvantage faced by Black-majority regions.
 """)
 
 tot = (
@@ -247,6 +249,11 @@ fig.update_layout(
 st.plotly_chart(fig, use_container_width=True)
 
 st.header("3. Leave Decision % Δ vs Global by Continent")
+st.markdown("""
+- Dismissed decisions are elevated by Caribbean +16.3 pp, North America +8.6 pp, Africa +5.1 pp versus global.
+- Discontinued cases are correspondingly lower (Caribbean –13.4 pp, North America –12.8 pp, Africa –6.0 pp), indicating Black applicants are far more likely to be outright refused rather than see cases dropped.
+- Allowed rates are only slightly above global in North America (+4.2 pp) and Africa (+0.9 pp) and actually lower in the Caribbean (–2.9 pp).
+""")
 counts = (
     df
     .groupby(['continent','LIT Leave Decision Desc'])['LIT Litigation Count']
@@ -309,6 +316,11 @@ fig.update_layout(
 st.plotly_chart(fig, use_container_width=True)
 
 st.header("4. Annual Case-Share & Refusal Rates for Select Continents")
+st.markdown("""
+- Across every year, Africa, North America and the Caribbean exhibit refusal rates well above the global average (dashed black line), indicating persistent regional disparities in outcomes.
+- The Caribbean’s refusal rate peaks highest rising from 73.9% in 2018 to 76.3% in 2019,before steadily declining to 43.2% by 2022, then rebounding to 48.7% in 2023.
+- Africa’s refusal rate steadily falls from 67.0% in 2018 to 50.1% in 2021, before upticking to 52.4% in 2023, even as its share of total cases fluctuates around one-third of all decisions.
+""")
 year_col  = 'LIT Leave Decision Date - Year'
 cont_col  = 'continent'
 dec_col   = 'LIT Leave Decision Desc'
@@ -456,6 +468,11 @@ fig.update_yaxes(title_text='Refusal rate (%)', secondary_y=True)
 st.plotly_chart(fig, use_container_width=True)
 
 st.header("5. Top 5 Case Types Over Years by Continent")
+st.markdown("""
+- AD Decisions dominate all three regions (≈50 – 70 % of cases), showing “refugee appeal” is the principal pathway.
+- Africa and North America have more variety (e.g. HC decisions, visa-officer refusals), whereas the Caribbean relies almost entirely on RAD.
+- RAD share peaked during 2020–2021, reflecting pandemic-era backlogs and expedited dismissals.
+""")
 agg = df.groupby(
     ['continent','LIT Case Type Group Desc','LIT Leave Decision Date - Year'],
     as_index=False
@@ -521,6 +538,10 @@ fig.update_layout(
 st.plotly_chart(fig, use_container_width=True)
 
 st.header("6. Top 10 Countries by Case Volume")
+st.markdown("""
+- In Africa, Nigeria alone accounts for ~73 % of the region’s cases. The next largest,DR Congo is only ~4 %.
+- In North America, Mexico (50.2 %) and the United States (22.6 %) together account for over 70 % of the region’s cases,
+""")
 for cont in ['Africa', 'North America']:
     dfc = df[df['continent'] == cont]
     pc = (
