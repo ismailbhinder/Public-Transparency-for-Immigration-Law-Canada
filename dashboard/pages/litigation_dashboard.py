@@ -80,7 +80,7 @@ st.plotly_chart(fig_trend, use_container_width=True)
 # ===== Section 2 =====
 # ===== Litigation Case Types Over Time by Country =====
 st.header("Case Type Breakdown Over Time for Top 4 Countries")
-st.markdown("#### Different Countries Show Distinct Litigation Patterns by Case Type")
+st.markdown("#### Mandamus Surges in China, Visa Refusals Dominates Iran, RAD Peaks in Nigeria")
 
 
 countries = {
@@ -118,23 +118,22 @@ for col_idx, (country_key, country_name) in enumerate(countries.items(), start=1
         values="LIT Litigation Count"
     ).fillna(0).sort_index()
 
-    total_counts = pivot_df.sum()
-    total_percent = (total_counts / total_counts.sum() * 100).round(2)
-
-
     for case_type in valid_case_types:
-        fig.add_trace(
-            go.Bar(
-                x=pivot_df[case_type].astype(str),
-                y=pivot_df.index,
-                orientation="h",
-                name=case_type,
-                text=pivot_df[case_type],
-                textposition="outside",
-                marker_color=color_map[case_type],
-                showlegend=False
-            ), row=2, col=col_idx
-        )
+        if case_type in pivot_df.columns:
+            fig.add_trace(
+                go.Bar(
+                    x=pivot_df[case_type].astype(str),
+                    y=pivot_df.index,
+                    orientation="h",
+                    name=case_type,
+                    text=pivot_df[case_type],
+                    textposition="outside",
+                    marker_color=color_map[case_type],
+                    showlegend=(col_idx == 1)
+                ),
+                row=2, col=col_idx
+            )
+
 
 
 fig.update_layout(
