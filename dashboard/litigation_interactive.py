@@ -9,7 +9,7 @@ st.set_page_config(page_title="Litigation Dashboard", layout="wide")
 
 # Load data
 df = pd.read_excel(
-    "/Users/husain/Desktop/Capstone/Public-Transparency-for-Immigration-Law-Canada-/data/raw/litigation_cases.xlsx",
+    "data/raw/litigation_cases.xlsx",
     skiprows=5, skipfooter=7
 )
 
