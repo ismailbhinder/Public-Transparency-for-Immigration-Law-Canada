@@ -8,7 +8,7 @@ import seaborn as sns
 # Load data
 @st.cache_data
 def load_data():
-    lit = pd.read_excel("data/raw/litigation_cases.xlsx", sheet_name="Final", skiprows=5)
+    lit = pd.read_excel("../data/raw/litigation_cases.xlsx", sheet_name="Final", skiprows=5)
     lit["Year"] = lit["LIT Leave Decision Date - Year"]
 
     # Standardizing Leave decision
