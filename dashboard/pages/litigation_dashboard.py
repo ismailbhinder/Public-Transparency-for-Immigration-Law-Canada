@@ -36,6 +36,7 @@ st.title("Litigation Case Dashboard")
 
 # ===== Section 1 =====
 st.header("Overview of Top Countries and Litigation Trends")
+st.markdown("#### Litigation Cases Remain in High Volume Since 2021")
 
 # Litigation Top Countries
 top_lit = lit.groupby("Country of Citizenship")["LIT Litigation Count"].sum().reset_index()
@@ -79,6 +80,8 @@ st.plotly_chart(fig_trend, use_container_width=True)
 # ===== Section 2 =====
 # ===== Litigation Case Types Over Time by Country =====
 st.header("Case Type Breakdown Over Time for Top 4 Countries")
+st.markdown("#### Different Countries Show Distinct Litigation Patterns by Case Type")
+
 
 countries = {
     "People's Republic of China": "China",
@@ -148,6 +151,8 @@ st.plotly_chart(fig, use_container_width=True)
 
 # ===== Section 3 =====
 st.header("Decision Type by Country Dumbbell Chart")
+st.markdown("#### Case Outcomes: How Each Country’s Decision Breakdown Differs from the Overall Distribution")
+
 
 # Country-level percentages
 country_grouped = lit[lit["Country of Citizenship"].isin(top4)].groupby(
@@ -239,7 +244,8 @@ fig.update_layout(
 st.plotly_chart(fig, use_container_width=True)
 
 # ===== Section 4 =====
-st.header("Decision Group Trends")
+st.header("Dismissed & Discontinued Cases Increasing Over Years")
+st.markdown("#### India and Iran have seen the sharpest rise in these outcomes since 2021")
 
 nonk_df = lit.copy()
 df_filtered = nonk_df[
